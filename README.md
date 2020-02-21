@@ -34,13 +34,47 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the difference between an adaptive website and a fully responsive website?
 
+Responsive sites and adaptive sites are the same in that they both change appearance based on the browser environment they are being viewed on (the most common thing: the browser's width).
+
+Responsive websites respond to the size of the browser at any given point. No matter what the browser width may be, the site adjusts its layout (and perhaps functionality) in a way that is optimized to the screen.
+
+Adaptive websites adapt to the width of the browser at a specific points. In other words, the website is only concerned about the browser being a specific width, at which point it adapts the layout.
+
+Another way to think about it is the difference between smooth and snap design. Responsive design is smooth because the layout fluidly adjusts regardless of what device it is viewed on. Adaptive design, on the other hand, snaps into place because the page is serving something different because of the browser or device it is viewed on.
+
 2. Describe what it means to be mobile first vs desktop first.
+
+The mobile-first approach is exactly as it sounds: designing for the smallest screen and working your way up.The mobile-first approach is a tenet of progressive enhancement.
+
+It is the ideology that mobile design, as the hardest, should be done first. Once the mobile design questions are answered, designing for other devices will be easier. What it boils down to is that, the smallest of the designs will have only the essential features, so right away you have designed the heart of your UX.
+
+Desktop first takes the opposite approach, the theory behind desktop first design is graceful degradation. This incorporates all of the complexities right from the start, then strips them away later for smaller devices. The problem with graceful degradation is that when you build the all-inclusive design right from the start, the core and supplementary elements merge and become harder to distinguish and separate. The entire philosophy runs the risk of treating mobile design as more of an afterthought since you’re “cutting down” the experience.
+
 
 3. What does `font-size: 62.5%` in the `html` tag do for us when using `rem` units?
 
+html { font-size: 62.5%; }
+this makes the default font size for your entire website 10px (assuming the browser’s default font size is 16px, which is the standard but is also user-configurable). Thus making conversion rem <-> px (pixels) is very easy (just divide pixel value by 10).
+
+This can serve as a fallback for older browsers that don't support the rem unit such as IE8, Firefox 3.5, Safari 4 and Opera 11.
+
+A typical method is to set the HTML font-size to 62.5%. That's because 62.5% of 16px (typical default browser font-size) is 10px. That would still make 1.6rem = 16px. This now means that if the user's default browser font-size is changed to, for example, 20px, 1.6rem would now equal 20px.
+
+
 4. How would you describe preprocessing to someone new to CSS?
 
+CSS itself is static in the sense that it doesn't provide for logical blocks, resuable values, or self-contained functions. Preprocessors such as LESS and SASS add such functionality, creating a sort of CSS superset. These are written differently, though they resemble closely CSS. Because browsers expect plain CSS, styles written in one of the preprocessors will need to be processed into CSS.
+
+A CSS preprocessor is a way to add conditional logic and/or writing efficiency to the process of making CSS. Since CSS is relatively verbose and contains no built in conditional logic, this is a way to achieve those things.
+
+It's a pre processor because CSS is static. The browser demands a flat file, so all of that has to happen before the CSS file is published, hence the preprocessor.
+
 5. What is your favorite concept in preprocessing? What is the concept that gives you the most trouble?
+
+Nesting is my favorite concept because it follows the best practice nesting conventions of writing html and helps you (me) stay on track, logically, as opposed to writing CSS styles as the come up. In other words, Nesting creates the visual hierarchy, as in HTML, that CSS innately lacks and thus increases readability.
+
+I think splitting the code into multiple files is giving me the most trouble at this point because it is hard for me to visualize conflicts (side effects) associated with Cascading
+
 
 You are expected to be able to answer all these questions. Your responses contribute to your Sprint Challenge grade. Skipping this section *will* prevent you from passing this challenge.
 
@@ -56,13 +90,13 @@ Follow these steps to set up your project:
 - [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
 - [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
 - [ ] Push commits: git push origin `<firstName-lastName>`.
- 
+
 Follow these steps for completing your project.
 
 - [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's  Repo). **Please don't merge your own pull request**
 - [ ] Add your project manager as a reviewer on the pull-request
 - [ ] Your project manager will count the project as complete by merging the branch back into master.
- 
+
 
 ### Preprocessor Set up
 
